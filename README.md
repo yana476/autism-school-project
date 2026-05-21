@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Міфи | Розуміти аутизм</title>
+    <meta name="description" content="Популярні міфи про аутизм і короткі факти для шкільного проєкту.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span aria-hidden="true">A</span>Розуміти аутизм</a>
+      <nav aria-label="Основна навігація">
+        <a href="index.html">Головна</a>
+        <a href="about.html">Про проєкт</a>
+        <a href="support.html">Підтримка</a>
+        <a href="myths.html" aria-current="page">Міфи</a>
+        <a href="contact.html">Контакти</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="page-hero warm">
+        <p class="kicker">Міфи та факти</p>
+        <h1>Стереотипи заважають розуміти людей</h1>
+        <p class="lead dark">Нижче — короткі формулювання, які зручно використати у шкільній презентації.</p>
+      </section>
+
+      <section class="section myth-list">
+        <article>
+          <h2>Міф: аутизм викликають вакцини</h2>
+          <p>Факт: дослідження не підтверджують зв’язок вакцин з аутизмом. Цей міф небезпечний, бо знижує довіру до профілактики хвороб.</p>
+        </article>
+        <article>
+          <h2>Міф: аутичні люди не хочуть спілкуватися</h2>
+          <p>Факт: бажання спілкуватися може бути, але спосіб комунікації буває іншим: через текст, жести, картки, короткі фрази або спеціальні пристрої.</p>
+        </article>
+        <article>
+          <h2>Міф: аутизм завжди помітний одразу</h2>
+          <p>Факт: деякі люди маскують труднощі, особливо у школі або на роботі. Це може призводити до втоми, тривоги та вигорання.</p>
+        </article>
+        <article>
+          <h2>Міф: підтримка потрібна тільки дітям</h2>
+          <p>Факт: аутичні підлітки й дорослі також можуть потребувати адаптацій, зрозумілої комунікації та доступних послуг.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Матеріал ґрунтується на інформації ВООЗ і CDC та написаний для шкільного проєкту.</p>
+    </footer>
+  </body>
+</html>
