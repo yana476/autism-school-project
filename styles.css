@@ -1,26 +1,31 @@
-# Розуміти аутизм
+:root {
+  --ink: #1c2730;
+  --muted: #61717a;
+  --paper: #fffaf0;
+  --surface: #ffffff;
+  --teal: #15827c;
+  --teal-dark: #0b5754;
+  --coral: #e46659;
+  --yellow: #f3bd46;
+  --sky: #dff1ff;
+  --mint: #dff3eb;
+  --peach: #ffe0d7;
+  --line: #e2ded2;
+  --shadow: 0 18px 50px rgba(28, 39, 48, 0.12);
+}
 
-Шкільний статичний сайт українською мовою про аутизм, підтримку та нейрорізноманіття.
+* {
+  box-sizing: border-box;
+}
 
-## Сторінки
+html {
+  scroll-behavior: smooth;
+}
 
-- `index.html` — головна сторінка.
-- `about.html` — пояснення теми та мета проєкту.
-- `support.html` — ідеї підтримки вдома й у школі.
-- `myths.html` — міфи та факти.
-- `contact.html` — форма зворотного зв’язку через `mailto`.
-- `uk.html` — перенаправлення на головну українську версію.
-
-## Як опублікувати на GitHub Pages через браузер
-
-1. Створіть новий репозиторій на GitHub.
-2. Завантажте в нього всі файли з цієї папки: HTML-файли, `styles.css`, `contact.js`, `README.md`, `.nojekyll` і папку `assets`.
-3. Відкрийте `Settings` → `Pages`.
-4. У `Build and deployment` виберіть `Deploy from a branch`.
-5. Виберіть гілку `main` і папку `/root`.
-6. Натисніть `Save`.
-7. Через хвилину GitHub покаже посилання на сайт.
-
-## Зворотний зв’язок
-
-Форма на сторінці `contact.html` відкриває лист на адресу `yannashapoval@gmail.com`.
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.58;
+}
