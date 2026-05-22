@@ -1,557 +1,74 @@
-:root {
-  --ink: #1c2730;
-  --muted: #61717a;
-  --paper: #fffaf0;
-  --surface: #ffffff;
-  --teal: #15827c;
-  --teal-dark: #0b5754;
-  --coral: #e46659;
-  --yellow: #f3bd46;
-  --sky: #dff1ff;
-  --mint: #dff3eb;
-  --peach: #ffe0d7;
-  --line: #e2ded2;
-  --shadow: 0 18px 50px rgba(28, 39, 48, 0.12);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  color: var(--ink);
-  background: var(--paper);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.58;
-}
-
-a {
-  color: inherit;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 14px clamp(16px, 4vw, 54px);
-  border-bottom: 1px solid rgba(28, 39, 48, 0.12);
-  background: rgba(255, 250, 240, 0.92);
-  backdrop-filter: blur(14px);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 900;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.brand span {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--ink);
-  background: var(--yellow);
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px 16px;
-  font-size: 0.95rem;
-}
-
-nav a {
-  min-height: 34px;
-  display: inline-flex;
-  align-items: center;
-  border-bottom: 3px solid transparent;
-  text-decoration: none;
-}
-
-nav a:hover,
-nav a:focus-visible,
-nav a[aria-current="page"] {
-  border-color: var(--coral);
-}
-
-.hero {
-  position: relative;
-  min-height: calc(100vh - 64px);
-  display: grid;
-  align-items: end;
-  overflow: hidden;
-  background: var(--teal-dark);
-}
-
-.hero img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-shade {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(12, 44, 43, 0.86), rgba(12, 44, 43, 0.56) 48%, rgba(12, 44, 43, 0.12)),
-    linear-gradient(0deg, rgba(12, 44, 43, 0.72), rgba(12, 44, 43, 0.05) 52%);
-}
-
-.hero-content {
-  position: relative;
-  width: min(760px, calc(100% - 36px));
-  margin: 0 0 clamp(52px, 8vh, 96px) clamp(18px, 6vw, 76px);
-  color: #fff;
-}
-
-.kicker {
-  margin: 0 0 12px;
-  color: var(--coral);
-  font-size: 0.8rem;
-  font-weight: 900;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.hero .kicker {
-  color: var(--yellow);
-}
-
-h1,
-h2,
-h3,
-p,
-li {
-  overflow-wrap: anywhere;
-}
-
-h1 {
-  max-width: 820px;
-  margin: 0;
-  font-size: clamp(2.7rem, 7vw, 6.2rem);
-  line-height: 0.96;
-  letter-spacing: 0;
-}
-
-h2 {
-  margin: 0;
-  font-size: clamp(1.7rem, 3.6vw, 3.6rem);
-  line-height: 1.04;
-  letter-spacing: 0;
-}
-
-h3 {
-  margin: 0 0 8px;
-  font-size: 1.2rem;
-  line-height: 1.18;
-}
-
-.lead {
-  max-width: 670px;
-  margin: 20px 0 0;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(1.05rem, 2vw, 1.32rem);
-}
-
-.lead.dark {
-  color: var(--muted);
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 12px 18px;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
-  font-weight: 900;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.button.primary {
-  border-color: var(--yellow);
-  color: var(--ink);
-  background: var(--yellow);
-}
-
-.button.ghost {
-  border-color: rgba(255, 255, 255, 0.72);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.facts-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.facts-strip article {
-  min-height: 142px;
-  padding: clamp(22px, 4vw, 36px);
-  background: var(--surface);
-}
-
-.facts-strip strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--teal-dark);
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
-  line-height: 1;
-}
-
-.facts-strip span,
-.card p,
-.text-block p,
-.wide-copy,
-.site-footer p,
-.contact-note p,
-.form-status,
-.myth-list p,
-.friendly-note p {
-  color: var(--muted);
-}
-
-.section,
-.page-hero {
-  width: min(1160px, calc(100% - 36px));
-  margin: 0 auto;
-}
-
-.section {
-  padding: clamp(58px, 8vw, 96px) 0;
-}
-
-.page {
-  padding-top: 24px;
-}
-
-.page-hero {
-  padding: clamp(48px, 8vw, 88px) 0 clamp(26px, 5vw, 52px);
-}
-
-.page-hero.compact {
-  max-width: 940px;
-}
-
-.page-hero.green,
-.page-hero.warm {
-  width: 100%;
-  max-width: none;
-  padding-left: max(18px, calc((100vw - 1160px) / 2));
-  padding-right: max(18px, calc((100vw - 1160px) / 2));
-}
-
-.page-hero.green {
-  background: var(--mint);
-}
-
-.page-hero.warm {
-  background: var(--peach);
-}
-
-.intro-grid,
-.two-column,
-.contact-layout,
-.soft-panel {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(26px, 5vw, 70px);
-  align-items: start;
-}
-
-.section-head {
-  max-width: 760px;
-  margin-bottom: 28px;
-}
-
-.friendly-note,
-.text-block,
-.contact-note,
-.soft-panel {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.friendly-note,
-.text-block,
-.contact-note {
-  padding: clamp(22px, 4vw, 34px);
-}
-
-.text-block.highlight {
-  background: var(--sky);
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.card {
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: inherit;
-  background: var(--surface);
-  text-decoration: none;
-  box-shadow: 0 10px 34px rgba(28, 39, 48, 0.08);
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-.card:not(.static):hover,
-.card:not(.static):focus-visible {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 42px rgba(28, 39, 48, 0.14);
-}
-
-.card h2,
-.card h3 {
-  margin-top: auto;
-}
-
-.badge {
-  display: inline-grid;
-  width: fit-content;
-  min-width: 46px;
-  height: 38px;
-  place-items: center;
-  margin-bottom: 28px;
-  padding: 0 12px;
-  border-radius: 999px;
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 900;
-}
-
-.badge.teal {
-  background: var(--teal);
-}
-
-.badge.coral {
-  background: var(--coral);
-}
-
-.badge.yellow {
-  color: var(--ink);
-  background: var(--yellow);
-}
-
-.badge.ink {
-  background: var(--ink);
-}
-
-.soft-panel {
-  padding: clamp(26px, 5vw, 44px);
-  background: var(--mint);
-}
-
-.steps,
-.check-list {
-  margin: 0;
-  padding-left: 22px;
-}
-
-.steps li,
-.check-list li {
-  margin-bottom: 10px;
-}
-
-.pill-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 24px 0;
-}
-
-.pill-list span {
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  font-weight: 800;
-}
-
-.wide-copy {
-  max-width: 840px;
-  font-size: 1.08rem;
-}
-
-.myth-list {
-  display: grid;
-  gap: 14px;
-}
-
-.myth-list article {
-  padding: clamp(22px, 4vw, 34px);
-  border-left: 8px solid var(--coral);
-  border-radius: 8px;
-  background: var(--surface);
-  box-shadow: 0 10px 34px rgba(28, 39, 48, 0.08);
-}
-
-.myth-list h2 {
-  font-size: clamp(1.35rem, 2.4vw, 2.1rem);
-}
-
-.contact-form {
-  display: grid;
-  gap: 16px;
-  padding: clamp(22px, 4vw, 34px);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-label {
-  display: grid;
-  gap: 8px;
-  color: var(--ink);
-  font-weight: 800;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  min-height: 46px;
-  padding: 12px;
-  border: 1px solid #cfc8bb;
-  border-radius: 8px;
-  color: var(--ink);
-  background: #fff;
-  font: inherit;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.form-button {
-  width: fit-content;
-}
-
-code {
-  padding: 2px 6px;
-  border-radius: 6px;
-  background: #f4ead8;
-}
-
-.site-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px 24px;
-  padding: 28px clamp(16px, 4vw, 54px);
-  border-top: 1px solid var(--line);
-  background: var(--surface);
-}
-
-.site-footer p {
-  margin: 0;
-}
-
-.site-footer a {
-  color: var(--teal-dark);
-  font-weight: 900;
-}
-
-@media (max-width: 980px) {
-  .site-header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  nav {
-    justify-content: flex-start;
-  }
-
-  .facts-strip,
-  .intro-grid,
-  .two-column,
-  .contact-layout,
-  .soft-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 620px) {
-  .brand {
-    white-space: normal;
-  }
-
-  nav {
-    gap: 4px 12px;
-    font-size: 0.9rem;
-  }
-
-  .hero {
-    min-height: 88vh;
-  }
-
-  .hero-shade {
-    background: linear-gradient(0deg, rgba(12, 44, 43, 0.88), rgba(12, 44, 43, 0.42));
-  }
-
-  .hero-content {
-    width: calc(100% - 32px);
-    margin: 0 16px 38px;
-  }
-
-  h1 {
-    font-size: clamp(2.35rem, 14vw, 4.7rem);
-  }
-
-  .actions,
-  .button,
-  .form-button {
-    width: 100%;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    min-height: auto;
-  }
-}
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Підтримка | Розуміти аутизм</title>
+    <meta name="description" content="Як підтримати аутичну людину вдома, у школі та в спілкуванні.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span aria-hidden="true">A</span>Розуміти аутизм</a>
+      <nav aria-label="Основна навігація">
+        <a href="index.html">Головна</a>
+        <a href="about.html">Про проєкт</a>
+        <a href="support.html" aria-current="page">Підтримка</a>
+        <a href="myths.html">Міфи</a>
+        <a href="contact.html">Контакти</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="page-hero green">
+        <p class="kicker">Підтримка</p>
+        <h1>Мета підтримки — зменшити бар’єри</h1>
+        <p class="lead dark">
+          Хороша підтримка не змушує людину “бути як усі”. Вона допомагає навчатися, відпочивати,
+          спілкуватися і почуватися безпечніше.
+        </p>
+      </section>
+
+      <section class="section card-grid">
+        <article class="card static">
+          <span class="badge teal">дім</span>
+          <h2>Вдома</h2>
+          <p>Візуальний розклад, попередження про зміни, спокійне місце, зрозумілі кроки замість довгих пояснень.</p>
+        </article>
+        <article class="card static">
+          <span class="badge coral">школа</span>
+          <h2>У школі</h2>
+          <p>Паузи, менше зайвого шуму, чіткі правила, можливість відповідати письмово або за допомогою карток.</p>
+        </article>
+        <article class="card static">
+          <span class="badge yellow">розмова</span>
+          <h2>У спілкуванні</h2>
+          <p>Говорити прямо, не квапити з відповіддю, не змушувати дивитися в очі, поважати особисті межі.</p>
+        </article>
+        <article class="card static">
+          <span class="badge ink">здоров’я</span>
+          <h2>У спеціалістів</h2>
+          <p>Пояснювати процедуру заздалегідь, показувати послідовність дій, враховувати тривогу, біль і сенсорні реакції.</p>
+        </article>
+      </section>
+
+      <section class="section soft-panel">
+        <div>
+          <p class="kicker">Міні-чеклист</p>
+          <h2>Як зробити клас дружнішим</h2>
+        </div>
+        <ul class="check-list">
+          <li>Писати план уроку на дошці.</li>
+          <li>Попереджати про контрольні, заміни та зміни розкладу.</li>
+          <li>Давати короткі інструкції по кроках.</li>
+          <li>Дозволяти навушники або тихе місце, якщо це можливо.</li>
+          <li>Не висміювати незвичні рухи, мовлення або інтереси.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Підтримка має бути індивідуальною та поважною. У складних ситуаціях варто звертатися до спеціалістів.</p>
+    </footer>
+  </body>
+</html>
